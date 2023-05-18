@@ -19,6 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public', 'views'));
 
+//oi
+
 //rotas css/img/js
 app.get('/style.css', function(req, res) {
   res.set('Content-Type', 'text/css');
