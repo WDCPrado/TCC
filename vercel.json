@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds":[
+    {
+      "src":"./index.js",
+      "use":"@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "URL": "mongodb+srv://WDCPrado:Sideswipe_4320@cluster0.za0p9zw.mongodb.net/Bar"
+  }
+}

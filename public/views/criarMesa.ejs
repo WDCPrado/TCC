@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Mesa</title>
+  <link rel="stylesheet" href="../css/style.css" media="all">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+/>
+</head>
+
+<body>
+  
+  
+  <section id="formulario">
+
+
+
+
+    <form id="myForm" class="form" method="POST" action="/criarMesa">
+
+      <label for="garcom">
+        <h1>Garçom:</h1>
+      </label>
+      <input type="text" id="garcom" name="garcom">
+      
+      <label for="nMesa">
+        <h1>Numero Mesa</h1>
+      </label>
+      <input type="tel" id="nMesa" name="nMesa">
+      
+
+      <div class="butao">
+        <input class="butao"  type="submit" value="Enviar">
+      </div>
+
+  
+    </form>
+
+    <form action="/verMesas" method="POST">
+      <div class="butao">
+        <input class="butao"  type="submit" value="Ver Mesas">
+      </div>
+    </form>
+
+
+
+
+
+    
+  </section>
+  
+</body>
+
+</html>

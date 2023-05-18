@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#formulario .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: baskerville, serif;
+  margin: 20px;
+  padding-top: 100px;
+
+}
+
+#formulario .form label {
+  margin: 10px 0;
+}
+
+#formulario .form input[type="text"],
+input[type="tel"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+#formulario input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #a30707;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#formulario input[type="submit"]:hover {
+  background-color: #570303;
+}
+
+#formulario .butao {
+  padding-top: 20px;
+}
+
+a {
+  font-family: 'UnifrakturCook', cursive;
+}
+
+
+/*lista*/
+#lista {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 50px;
+}
+
+.conteudo {
+  width: 250px;
+  height: 250px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  padding-bottom: 20px;
+}
+
+.conteudo h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.conteudo h3 {
+  color: #ba55d3;
+}
