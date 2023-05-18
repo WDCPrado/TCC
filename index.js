@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const conectarDB = require('./public/bd/conexionMongoDB');
 const Mesa = require('./public/bd/mesa');
 
-// Conectar a base de datos
+// Conectar a base de dados
 conectarDB();
 
 // Analisar o corpo da solicitação HTTP
@@ -19,15 +19,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public', 'views'));
 
-//oi
-
 //rotas css/img/js
 app.get('/style.css', function(req, res) {
   res.set('Content-Type', 'text/css');
   res.sendFile(__dirname + '/public/views/style.css');
 });
 
-// Rotas views
+//Rotas para views
 app.get(['/', '/criarMesa'], (req, res) => {
   res.render('criarMesa');
 });
@@ -37,8 +35,8 @@ app.get("/mesa", (req, res) => {
 });
 
 
-//query mesas
-// Obter todas as mesas
+//Metodos GET
+// Obter todas as mesas existentes
 app.get('/mesas', async (req, res) => {
   try {
     const mesas = await Mesa.find();
@@ -46,13 +44,12 @@ app.get('/mesas', async (req, res) => {
     return data
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: 'Error al obtener las mesas' });
+    res.status(500).json({ message: 'Erro ao obter as mesas' });
   }
 });
 
-
 //Metodos POST
-// Agregar un nuevo convidado
+// Agregar uma nova mesa
 app.post('/criarMesa', async (req, res) => {
   const garcom = req.body.garcom
   const nMesa = req.body.nMesa
@@ -63,10 +60,10 @@ app.post('/criarMesa', async (req, res) => {
   */
 
   try {
-    // Crear una nueva instancia del modelo del convidado
+    // Criar uma nova instancia para o esquema Mesa de mongoDB
     const novaMesa = new Mesa({garcom, nMesa});
 
-    // Guardar el nuevo convidado en la base de datos
+    // Guardar a mesa criada na base de dados
     await novaMesa.save();
 
     console.log(novaMesa)
@@ -83,15 +80,11 @@ app.post('/criarMesa', async (req, res) => {
   }
 });
 
-
 app.post('/verMesas', async (req, res) => {
   res.send(
     '<script>window.location.href="/mesa";</script>'
   );
 })
-
-
-
 
 // Inicio server
 const port = process.env.PORT || 3000;
